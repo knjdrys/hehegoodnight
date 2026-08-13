@@ -1,0 +1,574 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #fff;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #321728 0%,
+            #160b17 45%,
+            #07050a 100%
+        );
+}
+
+/* NIGHT */
+
+.night {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* MOON */
+
+.moon {
+    position: absolute;
+
+    top: 9%;
+    right: 12%;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #fff4d0;
+
+    box-shadow:
+        0 0 25px #fff0bd,
+        0 0 70px #fff0bd44;
+}
+
+.moon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #0d080f;
+
+    left: 20px;
+    top: -7px;
+}
+
+/* STARS */
+
+.stars span {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    opacity: .4;
+
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.stars span:nth-child(1) {
+    top: 15%;
+    left: 20%;
+}
+
+.stars span:nth-child(2) {
+    top: 28%;
+    left: 35%;
+    animation-delay: .7s;
+}
+
+.stars span:nth-child(3) {
+    top: 18%;
+    left: 70%;
+    animation-delay: 1.2s;
+}
+
+.stars span:nth-child(4) {
+    top: 40%;
+    left: 85%;
+    animation-delay: 1.8s;
+}
+
+.stars span:nth-child(5) {
+    top: 65%;
+    left: 15%;
+    animation-delay: 2.2s;
+}
+
+.stars span:nth-child(6) {
+    top: 72%;
+    left: 80%;
+    animation-delay: .4s;
+}
+
+@keyframes twinkle {
+
+    0%, 100% {
+        opacity: .2;
+        transform: scale(.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* MAIN */
+
+main {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    width: 90%;
+
+    animation: appear 2s ease forwards;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    color: #cdaab6;
+}
+
+/* ROSE */
+
+.rose {
+    position: relative;
+
+    width: 220px;
+    height: 260px;
+
+    margin: 0 auto;
+}
+
+/* STEM */
+
+.stem {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 7px;
+    height: 170px;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #17371f,
+            #579653,
+            #17371f
+        );
+
+    transform-origin: bottom;
+
+    animation: growStem 2.2s ease-out forwards;
+}
+
+@keyframes growStem {
+
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 170px;
+    }
+}
+
+/* LEAVES */
+
+.leaf {
+    position: absolute;
+
+    width: 55px;
+    height: 27px;
+
+    bottom: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4d8e4e,
+            #173b22
+        );
+
+    border-radius: 100% 0 100% 0;
+
+    opacity: 0;
+}
+
+.leaf-left {
+    left: 45px;
+
+    transform: rotate(-25deg);
+
+    animation: leafAppear 1s 2s forwards;
+}
+
+.leaf-right {
+    right: 45px;
+
+    transform:
+        scaleX(-1)
+        rotate(-25deg);
+
+    animation: leafAppear 1s 2.3s forwards;
+}
+
+@keyframes leafAppear {
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* FLOWER */
+
+.flower {
+    position: absolute;
+
+    left: 50%;
+    top: 35px;
+
+    width: 140px;
+    height: 130px;
+
+    transform: translateX(-50%);
+}
+
+/* PETALS */
+
+.petal {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 65px;
+    height: 90px;
+
+    border-radius:
+        55% 55%
+        45% 45%;
+
+    transform-origin: 50% 85%;
+
+    background:
+        radial-gradient(
+            circle at 50% 75%,
+            #ff9daf,
+            #df3f68 40%,
+            #85183d 100%
+        );
+
+    box-shadow:
+        inset 0 0 12px #ffb4c433,
+        0 7px 15px #500c2c88;
+
+    opacity: 0;
+}
+
+/* BLOOMING */
+
+.p1 {
+    animation: bloom1 1.2s 1.2s forwards;
+}
+
+.p2 {
+    animation: bloom2 1.2s 1.4s forwards;
+}
+
+.p3 {
+    animation: bloom3 1.2s 1.6s forwards;
+}
+
+.p4 {
+    animation: bloom4 1.2s 1.8s forwards;
+}
+
+.p5 {
+    animation: bloom5 1.2s 2s forwards;
+}
+
+@keyframes bloom1 {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -85%)
+            rotate(-55deg)
+            scale(.1);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -85%)
+            rotate(-55deg)
+            scale(1);
+    }
+}
+
+@keyframes bloom2 {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -85%)
+            rotate(-28deg)
+            scale(.1);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -85%)
+            rotate(-28deg)
+            scale(1);
+    }
+}
+
+@keyframes bloom3 {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -85%)
+            rotate(0)
+            scale(.1);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -85%)
+            rotate(0)
+            scale(1);
+    }
+}
+
+@keyframes bloom4 {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -85%)
+            rotate(28deg)
+            scale(.1);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -85%)
+            rotate(28deg)
+            scale(1);
+    }
+}
+
+@keyframes bloom5 {
+
+    from {
+        opacity: 0;
+        transform:
+            translate(-50%, -85%)
+            rotate(55deg)
+            scale(.1);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translate(-50%, -85%)
+            rotate(55deg)
+            scale(1);
+    }
+}
+
+/* ROSE CENTER */
+
+.center {
+    position: absolute;
+
+    left: 50%;
+    top: 52%;
+
+    width: 42px;
+    height: 42px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffb8c7,
+            #b51d4d
+        );
+
+    box-shadow:
+        0 0 20px #ff6f9188;
+
+    z-index: 5;
+
+    animation: pulse 3s 3s infinite;
+}
+
+@keyframes pulse {
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+/* MESSAGE */
+
+.message {
+    opacity: 0;
+
+    animation:
+        messageAppear
+        2s 3.5s
+        ease forwards;
+}
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: clamp(32px, 6vw, 58px);
+
+    font-weight: normal;
+
+    color: #fff1f5;
+
+    text-shadow:
+        0 0 25px #ff709944;
+}
+
+.name {
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    color: #e6c3cc;
+}
+
+.sorry {
+    margin: 22px auto 0;
+
+    max-width: 450px;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    color: #d8c4cb;
+}
+
+.sleep {
+    margin-top: 18px;
+
+    color: #ffd9e3;
+
+    line-height: 1.7;
+
+    font-size: 18px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .moon {
+        width: 55px;
+        height: 55px;
+
+        right: 8%;
+    }
+
+    .moon::after {
+        width: 55px;
+        height: 55px;
+    }
+
+    .rose {
+        transform: scale(.85);
+        margin-top: -15px;
+        margin-bottom: -15px;
+    }
+
+    .name {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .sorry {
+        font-size: 14px;
+    }
+}
