@@ -1,114 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>For Princess Ann 🌹</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Princess Ann</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="sky">
+<div class="night">
+  <div class="stars" id="stars"></div>
+  <div class="moon"></div>
 
-        <div class="moon"></div>
+  <div class="content">
+    <p class="eyebrow">before you close your eyes tonight</p>
 
-        <div class="stars">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-        </div>
+    <div class="rose-wrap" id="roseWrap">
+      <svg viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg">
 
-        <div class="particles"></div>
+        <!-- stem -->
+        <path class="stem" d="M 90 210 C 88 168, 92 136, 90 104" />
 
+        <!-- leaves -->
+        <path class="leaf l1" d="M 90 172 C 72 167, 58 176, 51 192 C 71 195, 85 187, 90 172 Z" />
+        <path class="leaf l2" d="M 90 183 C 108 177, 122 186, 129 202 C 109 205, 95 197, 90 183 Z" />
+
+        <!-- ===== rose head ===== -->
+        <g class="rose-head">
+
+          <!-- outer layer: 5 large open petals -->
+          <g class="layer layer-outer">
+            <path class="petal po" style="animation-delay:1.30s" transform="translate(90 100) rotate(-72) scale(1.12)" d="M 0,6 C -17,-2 -21,-25 0,-42 C 21,-25 17,-2 0,6 Z"/>
+            <path class="petal po" style="animation-delay:1.36s" transform="translate(90 100) rotate(0)   scale(1.12)" d="M 0,6 C -17,-2 -21,-25 0,-42 C 21,-25 17,-2 0,6 Z"/>
+            <path class="petal po" style="animation-delay:1.42s" transform="translate(90 100) rotate(72)  scale(1.12)" d="M 0,6 C -17,-2 -21,-25 0,-42 C 21,-25 17,-2 0,6 Z"/>
+            <path class="petal po" style="animation-delay:1.48s" transform="translate(90 100) rotate(144) scale(1.12)" d="M 0,6 C -17,-2 -21,-25 0,-42 C 21,-25 17,-2 0,6 Z"/>
+            <path class="petal po" style="animation-delay:1.54s" transform="translate(90 100) rotate(216) scale(1.12)" d="M 0,6 C -17,-2 -21,-25 0,-42 C 21,-25 17,-2 0,6 Z"/>
+          </g>
+
+          <!-- middle layer: 5 medium petals, offset 36deg -->
+          <g class="layer layer-mid">
+            <path class="petal pm" style="animation-delay:1.62s" transform="translate(90 99) rotate(-36) scale(0.86)" d="M 0,5 C -14,-2 -17,-22 0,-37 C 17,-22 14,-2 0,5 Z"/>
+            <path class="petal pm" style="animation-delay:1.68s" transform="translate(90 99) rotate(36)  scale(0.86)" d="M 0,5 C -14,-2 -17,-22 0,-37 C 17,-22 14,-2 0,5 Z"/>
+            <path class="petal pm" style="animation-delay:1.74s" transform="translate(90 99) rotate(108) scale(0.86)" d="M 0,5 C -14,-2 -17,-22 0,-37 C 17,-22 14,-2 0,5 Z"/>
+            <path class="petal pm" style="animation-delay:1.80s" transform="translate(90 99) rotate(180) scale(0.86)" d="M 0,5 C -14,-2 -17,-22 0,-37 C 17,-22 14,-2 0,5 Z"/>
+            <path class="petal pm" style="animation-delay:1.86s" transform="translate(90 99) rotate(252) scale(0.86)" d="M 0,5 C -14,-2 -17,-22 0,-37 C 17,-22 14,-2 0,5 Z"/>
+          </g>
+
+          <!-- inner layer: 3 small, tighter petals -->
+          <g class="layer layer-inner">
+            <path class="petal pi" style="animation-delay:1.94s" transform="translate(90 98) rotate(20)  scale(0.55)" d="M 0,4 C -10,-3 -12,-19 0,-32 C 12,-19 10,-3 0,4 Z"/>
+            <path class="petal pi" style="animation-delay:2.00s" transform="translate(90 98) rotate(140) scale(0.55)" d="M 0,4 C -10,-3 -12,-19 0,-32 C 12,-19 10,-3 0,4 Z"/>
+            <path class="petal pi" style="animation-delay:2.06s" transform="translate(90 98) rotate(260) scale(0.55)" d="M 0,4 C -10,-3 -12,-19 0,-32 C 12,-19 10,-3 0,4 Z"/>
+          </g>
+
+          <!-- center bud swirl -->
+          <g class="layer layer-center" style="animation-delay:1.05s">
+            <path class="bud" d="M 90,90 C 84,84 84,76 90,72 C 96,76 96,84 90,90 Z"/>
+            <path class="bud bud-fold" d="M 90,89 C 87,85 88,79 90,76 C 92,79 93,85 90,89 Z"/>
+          </g>
+
+        </g>
+      </svg>
+      <div id="petalField"></div>
     </div>
 
+    <div class="divider"></div>
 
-    <main class="page">
+    <p class="for-label">for</p>
+    <h1 class="name">Princess Ann</h1>
+    <p class="fullname">Princess Ann Del Rosario</p>
 
-        <div class="intro">
-            before you close your eyes tonight...
-        </div>
+    <p class="lead">I'm sorry for tonight.</p>
 
+    <p class="body-text">
+      I know a simple sorry can't erase everything, but I hope this little
+      rose reminds you that you are cared for and appreciated.<br>
+      Sleep peacefully tonight.
+    </p>
 
-        <!-- ROSE -->
+    <p class="signoff">Goodnight, Princess Ann. 🌹</p>
 
-        <div class="rose-scene">
+    <p class="hint">tap the rose</p>
+  </div>
+</div>
 
-            <div class="glow"></div>
-
-            <div class="rose">
-
-                <div class="stem"></div>
-
-                <div class="leaf leaf-left"></div>
-                <div class="leaf leaf-right"></div>
-
-                <div class="flower">
-
-                    <div class="petal petal-1"></div>
-                    <div class="petal petal-2"></div>
-                    <div class="petal petal-3"></div>
-                    <div class="petal petal-4"></div>
-                    <div class="petal petal-5"></div>
-                    <div class="petal petal-6"></div>
-                    <div class="petal petal-7"></div>
-
-                    <div class="rose-center"></div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- MESSAGE -->
-
-        <section class="message">
-
-            <p class="to">
-                For
-            </p>
-
-            <h1>
-                Princess Ann
-            </h1>
-
-            <p class="full-name">
-                Princess Ann Del Rosario
-            </p>
-
-            <div class="line"></div>
-
-            <p class="apology">
-                I'm sorry for tonight.
-                <br><br>
-                I know a simple sorry can't erase everything,
-                but I hope this little rose reminds you that
-                you are cared for and appreciated.
-            </p>
-
-            <p class="goodnight">
-                Sleep peacefully tonight.
-                <br>
-                <span>Goodnight, Princess Ann. 🌹</span>
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
