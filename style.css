@@ -43,10 +43,13 @@ html,body{
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:56px 24px 64px;
-  overflow:hidden;
+  padding:64px 24px 72px;
+  overflow-x:hidden;
   opacity:0;
   animation:curtainIn 1.1s ease forwards;
+}
+@media (max-width:380px){
+  .night{ padding:56px 18px 60px; }
 }
 @keyframes curtainIn{
   from{ opacity:0; }
@@ -91,28 +94,16 @@ html,body{
   position:absolute;
   top:6%;
   right:8%;
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  background:radial-gradient(circle at 38% 38%, #fbf1d8 0%, var(--gold) 70%, var(--gold-dim) 100%);
-  box-shadow:0 0 40px 6px rgba(223,192,138,0.35), 0 0 90px 20px rgba(223,192,138,0.12);
+  width:68px;
+  height:68px;
+  filter:drop-shadow(0 0 10px rgba(223,192,138,0.55)) drop-shadow(0 0 26px rgba(223,192,138,0.3));
   animation:breathe 6s ease-in-out infinite;
   transition:transform 0.4s ease-out;
   will-change:transform;
 }
-.moon::after{
-  content:"";
-  position:absolute;
-  top:-6%;
-  right:22%;
-  width:60%;
-  height:112%;
-  border-radius:50%;
-  background:var(--bg-deep);
-}
 @keyframes breathe{
-  0%,100%{ box-shadow:0 0 40px 6px rgba(223,192,138,0.35), 0 0 90px 20px rgba(223,192,138,0.12); }
-  50%{ box-shadow:0 0 48px 10px rgba(223,192,138,0.45), 0 0 100px 26px rgba(223,192,138,0.18); }
+  0%,100%{ filter:drop-shadow(0 0 10px rgba(223,192,138,0.55)) drop-shadow(0 0 26px rgba(223,192,138,0.3)); }
+  50%{ filter:drop-shadow(0 0 14px rgba(223,192,138,0.7)) drop-shadow(0 0 32px rgba(223,192,138,0.4)); }
 }
 
 .candle-glow{
@@ -235,7 +226,7 @@ html,body{
   top:66px;
   width:9px;
   height:7px;
-  background:linear-gradient(135deg, #e0798c, #a5384c);
+  background:linear-gradient(135deg, #f2453a, #8c0a0a);
   border-radius:60% 10% 60% 10%;
   opacity:0;
   pointer-events:none;
@@ -367,6 +358,16 @@ html,body{
 @keyframes riseIn{
   from{ opacity:0; transform:translateY(10px); }
   to{ opacity:1; transform:translateY(0); }
+}
+
+@media (max-width:380px){
+  .eyebrow{ margin-bottom:30px; }
+  .rose-wrap{ width:150px; height:187px; margin-bottom:12px; }
+  .divider{ margin:20px 0 18px; }
+  .lead{ margin-top:24px; }
+  .body-text{ margin-top:18px; line-height:1.65; }
+  .signature{ margin-top:26px; }
+  .hint{ margin-top:32px; }
 }
 
 @media (prefers-reduced-motion: reduce){
